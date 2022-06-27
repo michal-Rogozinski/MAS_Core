@@ -21,26 +21,29 @@ namespace MAS_Core.Pages.Forms
 
         public IActionResult OnGet()
         {
-        ViewData["Company"] = new SelectList(_context.Set<Company>(), "ClientsID", "Type");
+        ViewData["FormID"] = new SelectList(_context.Set<Company>(), "ClientsID", "Type");
+        ViewData["CustomerServiceID"] = new SelectList(_context.CustomerServices, "CustomerServiceID", "CustomerServiceID");
+        ViewData["DispatcherID"] = new SelectList(_context.Dispatchers, "DispatcherID", "DispatcherID");
+        ViewData["FormID"] = new SelectList(_context.Set<Individual>(), "ClientsID", "Type");
             return Page();
         }
 
         [BindProperty]
         public Form FormRef { get; set; } = default!;
-        public Payment PaymentRef { get; set; } = default!;
+        
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Forms == null || FormRef == null)
+            var emptyForm = new Form();
+            if (await TryUpdateModelAsync<Form>(
+                emptyForm, "Form", s => s.FormID,s => s.PaymentID,s => s.CustomerServiceID, s=> s.DispatcherID, s=> s.ClientsID, s=> s.Distance, s=> s.DepartureName,s => s.DepartureName, s=> s.PayloadType))
             {
-                return Page();
+                _context.Forms.Add(emptyForm);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
             }
-
-            _context.Forms.Add(FormRef);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            return Page();
         }
     }
 }

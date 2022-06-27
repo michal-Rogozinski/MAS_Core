@@ -1,5 +1,6 @@
 ﻿@page
 @model MAS_Core.Pages.Forms.CreateModel
+@using MAS_Core.Models
 
 <h4>Form</h4>
 <hr />
@@ -8,9 +9,49 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="FormRef.Company" class="control-label"></label>
+                <label asp-for="FormRef.FormID" class="control-label">Form ID</label>
+                <input asp-for="FormRef.FormID" class ="form-control"></input>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormRef.PaymentID" class="control-label">Payment ID</label>
                 <input asp-for="FormRef.PaymentID" class="form-control" />
                 <span asp-validation-for="FormRef.PaymentID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormRef.ClientsID" class="control-label">Client ID</label>
+                <input asp-for="FormRef.ClientsID" class="form-control" />
+                <span asp-validation-for="FormRef.ClientsID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormRef.CustomerServiceID" class="control-label">Customer service ID</label>
+                <select asp-for="FormRef.CustomerServiceID" class ="form-control" asp-items="ViewBag.CustomerServiceID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormRef.DispatcherID" class="control-label">Dispatcher ID</label>
+                <select asp-for="FormRef.DispatcherID" class ="form-control" asp-items="ViewBag.DispatcherID"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FormRef.DepartureName" class="control-label">Departure name</label>
+                <input asp-for="FormRef.DepartureName" class="form-control" />
+                <span asp-validation-for="FormRef.DepartureName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormRef.DestinationName" class="control-label">Destination name</label>
+                <input asp-for="FormRef.DestinationName" class="form-control" />
+                <span asp-validation-for="FormRef.DestinationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormRef.Distance" class="control-label">Distance</label>
+                <input asp-for="FormRef.Distance" class="form-control" />
+                <span asp-validation-for="FormRef.Distance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormRef.PayloadType" class="control-label">Payload Type</label>
+                <select asp-for="FormRef.PayloadType" class="form-control" asp-items="@Html.GetEnumSelectList<PayloadType>()">
+                    <option selected="selected" value=""></option>
+                </select>
+                <span asp-validation-for="FormRef.PayloadType" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
