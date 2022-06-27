@@ -1,0 +1,64 @@
+﻿@page
+@model MAS_Core.Pages.Forms.EditModel
+
+<h4>Form</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Form.PaymentID" class="control-label"></label>
+                <input asp-for="Form.PaymentID" class="form-control" />
+                <span asp-validation-for="Form.PaymentID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Form.ClientsID" class="control-label"></label>
+                <input asp-for="Form.ClientsID" class="form-control" />
+                <span asp-validation-for="Form.ClientsID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Form.CustomerServiceID" class="control-label"></label>
+                <select asp-for="Form.CustomerServiceID" class="form-control" asp-items="ViewBag.CustomerServiceID"></select>
+                <span asp-validation-for="Form.CustomerServiceID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Form.DispatcherID" class="control-label"></label>
+                <select asp-for="Form.DispatcherID" class="form-control" asp-items="ViewBag.DispatcherID"></select>
+                <span asp-validation-for="Form.DispatcherID" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Form.FormID" />
+            <div class="form-group">
+                <label asp-for="Form.DepartureName" class="control-label"></label>
+                <input asp-for="Form.DepartureName" class="form-control" />
+                <span asp-validation-for="Form.DepartureName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Form.DestinationName" class="control-label"></label>
+                <input asp-for="Form.DestinationName" class="form-control" />
+                <span asp-validation-for="Form.DestinationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Form.Distance" class="control-label"></label>
+                <input asp-for="Form.Distance" class="form-control" />
+                <span asp-validation-for="Form.Distance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Form.PayloadType" class="control-label"></label>
+                <select asp-for="Form.PayloadType" class="form-control"></select>
+                <span asp-validation-for="Form.PayloadType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

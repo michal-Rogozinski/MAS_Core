@@ -1,0 +1,69 @@
+﻿@page
+@model MAS_Core.Pages.Employees.E2.EditModel
+
+<h4>Dispatcher</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Dispatcher.DispatcherID" />
+            <div class="form-group">
+                <label asp-for="Dispatcher.Name" class="control-label"></label>
+                <input asp-for="Dispatcher.Name" class="form-control" />
+                <span asp-validation-for="Dispatcher.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispatcher.Surname" class="control-label"></label>
+                <input asp-for="Dispatcher.Surname" class="form-control" />
+                <span asp-validation-for="Dispatcher.Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispatcher.PESEL" class="control-label"></label>
+                <input asp-for="Dispatcher.PESEL" class="form-control" />
+                <span asp-validation-for="Dispatcher.PESEL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispatcher.Address" class="control-label"></label>
+                <input asp-for="Dispatcher.Address" class="form-control" />
+                <span asp-validation-for="Dispatcher.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispatcher.Phone" class="control-label"></label>
+                <input asp-for="Dispatcher.Phone" class="form-control" />
+                <span asp-validation-for="Dispatcher.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispatcher.Login" class="control-label"></label>
+                <input asp-for="Dispatcher.Login" class="form-control" />
+                <span asp-validation-for="Dispatcher.Login" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispatcher.Password" class="control-label"></label>
+                <input asp-for="Dispatcher.Password" class="form-control" />
+                <span asp-validation-for="Dispatcher.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispatcher.DOB" class="control-label"></label>
+                <input asp-for="Dispatcher.DOB" class="form-control" />
+                <span asp-validation-for="Dispatcher.DOB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispatcher.Salary" class="control-label"></label>
+                <input asp-for="Dispatcher.Salary" class="form-control" />
+                <span asp-validation-for="Dispatcher.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

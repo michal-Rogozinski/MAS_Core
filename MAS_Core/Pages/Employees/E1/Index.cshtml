@@ -1,0 +1,78 @@
+﻿@page
+@model MAS_Core.Pages.Employees.E1.IndexModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerService[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerService[0].Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerService[0].PESEL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerService[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerService[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerService[0].Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerService[0].Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerService[0].DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerService[0].Salary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CustomerService) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PESEL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CustomerServiceID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CustomerServiceID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CustomerServiceID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

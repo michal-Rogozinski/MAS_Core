@@ -1,0 +1,68 @@
+﻿@page
+@model MAS_Core.Pages.Employees.E1.CreateModel
+
+<h4>CustomerService</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerService.Name" class="control-label"></label>
+                <input asp-for="CustomerService.Name" class="form-control" />
+                <span asp-validation-for="CustomerService.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerService.Surname" class="control-label"></label>
+                <input asp-for="CustomerService.Surname" class="form-control" />
+                <span asp-validation-for="CustomerService.Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerService.PESEL" class="control-label"></label>
+                <input asp-for="CustomerService.PESEL" class="form-control" />
+                <span asp-validation-for="CustomerService.PESEL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerService.Address" class="control-label"></label>
+                <input asp-for="CustomerService.Address" class="form-control" />
+                <span asp-validation-for="CustomerService.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerService.Phone" class="control-label"></label>
+                <input asp-for="CustomerService.Phone" class="form-control" />
+                <span asp-validation-for="CustomerService.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerService.Login" class="control-label"></label>
+                <input asp-for="CustomerService.Login" class="form-control" />
+                <span asp-validation-for="CustomerService.Login" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerService.Password" class="control-label"></label>
+                <input asp-for="CustomerService.Password" class="form-control" />
+                <span asp-validation-for="CustomerService.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerService.DOB" class="control-label"></label>
+                <input asp-for="CustomerService.DOB" class="form-control" />
+                <span asp-validation-for="CustomerService.DOB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerService.Salary" class="control-label"></label>
+                <input asp-for="CustomerService.Salary" class="form-control" />
+                <span asp-validation-for="CustomerService.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

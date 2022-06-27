@@ -1,0 +1,43 @@
+﻿@page
+@model MAS_Core.Pages.Wagons.CreateModel
+
+<h4>Wagon</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Wagon.Code" class="control-label"></label>
+                <input asp-for="Wagon.Code" class="form-control" />
+                <span asp-validation-for="Wagon.Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wagon.Status" class="control-label"></label>
+                <select asp-for="Wagon.Status" class="form-control"></select>
+                <span asp-validation-for="Wagon.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wagon.LoadQty" class="control-label"></label>
+                <input asp-for="Wagon.LoadQty" class="form-control" />
+                <span asp-validation-for="Wagon.LoadQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wagon.LoadType" class="control-label"></label>
+                <select asp-for="Wagon.LoadType" class="form-control"></select>
+                <span asp-validation-for="Wagon.LoadType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,69 @@
+﻿@page
+@model MAS_Core.Pages.Employees.E3.EditModel
+
+<h4>Warehouseman</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Warehouseman.WarehousemanID" />
+            <div class="form-group">
+                <label asp-for="Warehouseman.Name" class="control-label"></label>
+                <input asp-for="Warehouseman.Name" class="form-control" />
+                <span asp-validation-for="Warehouseman.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouseman.Surname" class="control-label"></label>
+                <input asp-for="Warehouseman.Surname" class="form-control" />
+                <span asp-validation-for="Warehouseman.Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouseman.PESEL" class="control-label"></label>
+                <input asp-for="Warehouseman.PESEL" class="form-control" />
+                <span asp-validation-for="Warehouseman.PESEL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouseman.Address" class="control-label"></label>
+                <input asp-for="Warehouseman.Address" class="form-control" />
+                <span asp-validation-for="Warehouseman.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouseman.Phone" class="control-label"></label>
+                <input asp-for="Warehouseman.Phone" class="form-control" />
+                <span asp-validation-for="Warehouseman.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouseman.Login" class="control-label"></label>
+                <input asp-for="Warehouseman.Login" class="form-control" />
+                <span asp-validation-for="Warehouseman.Login" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouseman.Password" class="control-label"></label>
+                <input asp-for="Warehouseman.Password" class="form-control" />
+                <span asp-validation-for="Warehouseman.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouseman.DOB" class="control-label"></label>
+                <input asp-for="Warehouseman.DOB" class="form-control" />
+                <span asp-validation-for="Warehouseman.DOB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouseman.Salary" class="control-label"></label>
+                <input asp-for="Warehouseman.Salary" class="form-control" />
+                <span asp-validation-for="Warehouseman.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

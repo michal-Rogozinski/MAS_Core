@@ -1,0 +1,54 @@
+﻿@page
+@model MAS_Core.Pages.Wagons.IndexModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Wagon[0].Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wagon[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wagon[0].LoadQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wagon[0].LoadType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wagon[0].WagonType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Wagon) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoadQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoadType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WagonType)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.WagonID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.WagonID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.WagonID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

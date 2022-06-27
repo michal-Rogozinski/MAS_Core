@@ -1,0 +1,84 @@
+﻿@page
+@model MAS_Core.Pages.Forms.IndexModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Form[0].Individual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form[0].Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form[0].CustomerService)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form[0].Dispatcher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form[0].PaymentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form[0].ClientsID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form[0].DepartureName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form[0].DestinationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form[0].Distance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form[0].PayloadType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Form) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Individual.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerService.CustomerServiceID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dispatcher.DispatcherID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientsID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayloadType)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.FormID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.FormID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.FormID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
